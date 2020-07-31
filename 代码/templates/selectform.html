@@ -1,0 +1,33 @@
+{% extends 'bootstrap/base.html' %}
+{%  import 'bootstrap/wtf.html' as wtf %}
+{% block navbar %}
+    {{ nav.top.render() }}
+{% endblock %}
+{% block content %}
+    <div class="container"> <!--居中，否则表格会紧贴屏幕左边框-->
+        <table class="table table-bordered">
+            <tr>
+                <th>航空公司</th>
+                <th>航班号</th>
+                <th>日期</th>
+                <th>出发地</th>
+                <th>目的地</th>
+                <th>起飞时间</th>
+                <th>到达时间</th>
+                <th>剩余座位</th>
+            </tr>
+            {% for i in rs %}
+            <tr>
+                <td>{{ i[0] }}</td>
+                <td>{{ i[1] }}</td>
+                <td>{{ i[2] }}</td>
+                <td>{{ i[6] }}</td>
+                <td>{{ i[7] }}</td>
+                <td>{{ i[3] }}</td>
+                <td>{{ i[4] }}</td>
+                <td>{{ i[5] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock content %}
